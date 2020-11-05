@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 
 const ApodUser = prop => {
     const {userApodObj, changeDate} = prop;
@@ -19,5 +20,6 @@ const ApodUser = prop => {
     </div>
   );
 }
+
 
 export default ApodUser;
