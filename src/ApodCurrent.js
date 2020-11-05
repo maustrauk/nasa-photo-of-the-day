@@ -16,8 +16,8 @@ const ApodCurrent = prop => {
 }
 
 const StyledText = styled.div`
-  font-size: 1.25em;
-  font-family: "Comic Sans MS";
+  font-size: ${pr => pr.theme.textFontSize};
+  font-family: ${pr => pr.theme.textFontFamily};
   text-align: center;
   width: 75%;
   margin-left: auto;
@@ -33,12 +33,12 @@ const StyledImg = styled.img`
 `;
 
 const StyledH1 = styled.h1`
-  font-size: 2.7em;
+  font-size: ${pr => pr.theme.h1FontSize};
 `;
 
 const StyledH2 = styled.h2`
-  font-size: 2.5em;
-  font-family: "Lucida Console";
+  font-size: ${pr => pr.theme.h2FontSize};
+  font-family: ${pr => pr.theme.h1FontFamily};
 `;
 
 export default ApodCurrent;
