@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Button from '@material-ui/core/Button';
 
 const ApodUser = prop => {
     const {userApodObj, changeDate} = prop;
@@ -15,7 +16,7 @@ const ApodUser = prop => {
         <StyledImg src={userApodObj.url} alt={userApodObj.title}></StyledImg>
         <StyledH2>{userApodObj.title}</StyledH2>
         <StyledText>{userApodObj.explanation}</StyledText>
-        <a href={userApodObj.hdurl}>HD picture</a>
+        <Button variant="contained" color="primary" href={userApodObj.hdurl} >HD picture</Button>
         <p>Copyrigt: {userApodObj.copyright}</p>
     </div>
   );
@@ -28,6 +29,7 @@ const StyledText = styled.div`
   width: 75%;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 1em;
 `;
 
 const StyledImg = styled.img`
