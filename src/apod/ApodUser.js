@@ -7,12 +7,12 @@ const ApodUser = prop => {
 
   return (
     <div className="ApodUser">
-        <div>
-            <label>Choose your date:</label>
+        <StyledDate>
+            <StyledLabel>Date:</StyledLabel>
             <input type="date" value={userApodObj.date}
              min="2020-09-01" max="2020-11-05"
              onChange={(e) => changeDate(e.target.value)} ></input>
-        </div>
+        </StyledDate>
         <StyledImg src={userApodObj.url} alt={userApodObj.title}></StyledImg>
         <StyledH2>{userApodObj.title}</StyledH2>
         <StyledText>{userApodObj.explanation}</StyledText>
@@ -21,6 +21,10 @@ const ApodUser = prop => {
     </div>
   );
 }
+
+const StyledLabel = styled.label`
+  font-size: 1.2em;
+`;
 
 const StyledText = styled.div`
   font-size: ${pr => pr.theme.textFontSize};
@@ -33,8 +37,10 @@ const StyledText = styled.div`
 `;
 
 const StyledImg = styled.img`
+  margin-right: auto;
+  margin-left: auto;
   &:hover {
-    transform: scale(0.985);
+    transform: scale(1.035);
     transition: transform 1.5s ease-in-out;
   }
   transition: transform 1.5s ease-in-out;
@@ -43,6 +49,10 @@ const StyledImg = styled.img`
 const StyledH2 = styled.h2`
   font-size: ${pr => pr.theme.h2FontSize};
   font-family: ${pr => pr.theme.h1FontFamily};
+`;
+
+const StyledDate = styled.div`
+  margin-bottom: 1em;
 `;
 
 export default ApodUser;

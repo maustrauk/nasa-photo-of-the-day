@@ -27,6 +27,8 @@ const StyledText = styled.div`
 `;
 
 const StyledImg = styled.img`
+  margin-right: auto;
+  margin-left: auto;
   &:hover {
     transform: scale(1.085);
     transition: transform 1.5s ease-in-out;

@@ -4,12 +4,21 @@ import axios from "axios";
 import ApodCurrent from "./ApodCurrent.js";
 import ApodUser from "./ApodUser.js";
 
-import {APOD_API_URL, API_KEY} from "./const.js";
+import {APOD_API_URL, API_KEY} from "../const/const.js";
 
 const Apod = prop => {
 
 const [apodObj, setApodObj] = useState({});
 const [apodDate, setApodDate] = useState('2020-10-04');
+
+const errorObj ={
+    date : "n/a",
+    url : "https://cdn.dribbble.com/users/1449854/screenshots/4136663/no_data_found.png",
+    title : "No Data found",
+    explanation : "No Data",
+    hdurl : "n/a",
+    copyright : "n/a",
+};
 
 useEffect(() => {
     axios
@@ -19,6 +28,7 @@ useEffect(() => {
     })
     .catch(err => {
         console.log("Error: ",err);
+        setApodObj(errorObj);
     })
 },[]);
 
@@ -32,6 +42,7 @@ useEffect(() => {
     })
     .catch(err => {
         console.log("Error: ",err);
+        setApodObj(errorObj);
     })
 },[apodDate]);
 
